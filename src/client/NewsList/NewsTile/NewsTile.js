@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Image from './Image';
 
 function NewsTile({ news }) {
@@ -29,4 +30,17 @@ function NewsTile({ news }) {
     </div>
   );
 }
+
+NewsTile.propTypes = {
+  news: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    urlToImage: PropTypes.string.isRequired,
+    source: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
 export default NewsTile;

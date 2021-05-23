@@ -3,12 +3,14 @@
  */
 
 const NewsAPI = require('newsapi');
+const { join } = require('path');
+const config = require('dotenv').config({ path: join(__dirname, '.env') });
 
-if (!process.env.API_KEY) {
+if (!config.parsed.API_KEY) {
   console.error('No API_KEY Specified.. exiting...');
   process.exit(0);
 }
-const newsapi = new NewsAPI(process.env.API_KEY);
+const newsapi = new NewsAPI(config.parsed.API_KEY);
 
 let ukNewsSources;
 

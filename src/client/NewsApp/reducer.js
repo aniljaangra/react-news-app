@@ -15,7 +15,6 @@ function reducer(state, action) {
       };
 
     case SET_NEWS:
-      console.log(state.articles.length, action.articles.length);
       return {
         ...state,
         fetching: false,

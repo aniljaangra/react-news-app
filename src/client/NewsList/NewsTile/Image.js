@@ -2,6 +2,7 @@
  * Created by Anil Jangra on 5/23/2021
  */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Image = ({ src }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,3 +31,7 @@ const Image = ({ src }) => {
 };
 
 export default Image;
+
+Image.propTypes = {
+  src: PropTypes.string.isRequired,
+};

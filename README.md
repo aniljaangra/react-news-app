@@ -1,6 +1,10 @@
 # react-news-app
 
-install dependancies using `yarn` (requires node version `>=10.17.0`)
+install dependencies using `yarn` (requires node version `>=10.17.0`)
+
+go to `src/server/.env` and place your `API_KEY` from `newsapi` without quotes
+
+`API_KEY=yournewsapihash`
 
 then start using typing `yarn start` 
 
