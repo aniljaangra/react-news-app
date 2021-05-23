@@ -3,18 +3,18 @@
  */
 import { useCallback, useEffect } from 'react';
 // infinite scrolling with intersection observer
-const useIntersectionObserver = (scrollRef, dispatch) => {
+const useIntersectionObserver = (scrollRef, callback) => {
   const scrollObserver = useCallback(
     (node) => {
       new IntersectionObserver((entries) => {
         entries.forEach((en) => {
-          if (en.intersectionRatio > 0) {
-            dispatch({ type: 'ADVANCE_PAGE' });
+          if (en.isIntersecting) {
+            callback();
           }
         });
-      }).observe(node);
+      }, { rootMargin: '500px 0px 500px 0px' }).observe(node);
     },
-    [dispatch],
+    [],
   );
 
   useEffect(() => {

@@ -5,8 +5,8 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import HeaderWrapper from './HeaderWrapper';
 
-const Header = ({ onSearchNews }) => (
-  <HeaderWrapper>
+const Header = ({ onSearchNews, onReset }) => (
+  <HeaderWrapper onReset={onReset}>
     <SearchBar onSearchNews={onSearchNews} />
   </HeaderWrapper>
 );

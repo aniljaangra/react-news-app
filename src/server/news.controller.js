@@ -4,7 +4,11 @@
 
 const NewsAPI = require('newsapi');
 
-const newsapi = new NewsAPI('1d0662dd919e46adb23651f3b875e948');
+if (!process.env.API_KEY) {
+  console.error('No API_KEY Specified.. exiting...');
+  process.exit(0);
+}
+const newsapi = new NewsAPI(process.env.API_KEY);
 
 let ukNewsSources;
 

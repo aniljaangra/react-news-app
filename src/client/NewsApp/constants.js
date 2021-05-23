@@ -3,3 +3,4 @@
  */
 export const FETCHING_NEWS = 'FETCHING_NEWS';
 export const SET_NEWS = 'SET_NEWS_DATA';
+export const RESET_DATA = 'RESET_DATA';

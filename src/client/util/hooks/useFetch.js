@@ -10,16 +10,22 @@ const useFetch = (data, dispatch) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        dispatch(fetchNews(true));
-        const articles = await (await fetch(`${NEWS_API_URL}?query=${data.query}&page=${data.page}`)).json();
-        dispatch(fetchNewsSuccess(articles));
+        if (!data.hasMore) return;
+        dispatch(fetchNews(true, data.page));
+        const { articles, error, hasMore } = await (await fetch(`${NEWS_API_URL}?query=${data.query}&page=${data.page}`)).json();
+        if (error) {
+          dispatch(fetchNews(false, null, error));
+        } else {
+          dispatch(fetchNewsSuccess(articles, hasMore));
+        }
       } catch (err) {
         // handle error
-        dispatch(fetchNews(false));
+        console.log(err);
+        dispatch(fetchNews(false, null, err));
       }
     };
     fetchData();
-  }, [dispatch, data.page, data.query]);
+  }, [dispatch, data.page, data.query, data.hasMore]);
 };
 
 export default useFetch;

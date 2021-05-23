@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from './Image';
 
 function NewsTile({ news }) {
   return (
@@ -6,7 +7,7 @@ function NewsTile({ news }) {
       <div
         className="card shadow mb-5 p-2 bg-white rounded"
       >
-        <img src={news.urlToImage} className="card-img-top" alt="IMG" />
+        <Image src={news.urlToImage} />
         <div className="card-body">
           <h5 className="card-title">
             {news.title}

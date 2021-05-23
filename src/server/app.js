@@ -14,13 +14,13 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get('/api/news/search', async ({ query: { query, page = 1 } }, res) => {
-  const response = await searchEverything(query, page);
-  res.send(response.articles);
-});
-
-app.get('/api/news/all', async (req, res) => {
-  const response = await fetchTopHeadlines();
-  res.send(response.articles);
+  try {
+    const { articles, totalResults } = await searchEverything(query, page);
+    res.send({ articles, hasMore: ((page + 1) * 20) < totalResults });
+  } catch (err) {
+    // console.log(err);
+    res.send({ error: 'Error Fetching News..' });
+  }
 });
 
 module.exports = app;
