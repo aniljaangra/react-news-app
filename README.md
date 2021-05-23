@@ -1,9 +1,9 @@
-# react-university-app
+# react-news-app
 
-install dependancies using `npm install`
+install dependancies using `yarn` (requires node version `>=10.17.0`)
 
-then start using typing `npm start` 
+then start using typing `yarn start` 
 
 once complete , open `http://localhost:8080` in browser
 
-for running test cases , simply do `npm test`
+for running test cases , simply do `yarn test`
