@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 function SearchBar({ onSearchNews }) {
   let input;
+  const onKeyDown = (e) => {
+    if (e.key === 'Enter') onSearchNews(input.value);
+  };
   return (
     <div>
       <div className="input-group my-3 mr-sm-2">
@@ -11,6 +14,7 @@ function SearchBar({ onSearchNews }) {
           className="form-control"
           placeholder="search news"
           ref={(ref) => { input = ref; }}
+          onKeyDown={onKeyDown}
         />
         <div className="input-group-prepend">
           <button
