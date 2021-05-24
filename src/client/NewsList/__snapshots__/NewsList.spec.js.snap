@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsTile renders NewsList component correctly 1`] = `
+<div
+  className="container-fluid min-vh-100"
+>
+  <div
+    className="container mt-6"
+  >
+    <div
+      className="row py-3 mt-3"
+    >
+      <NewsTile
+        key="https://localhost"
+        news={
+          Object {
+            "description": "sample description",
+            "source": Object {
+              "name": "sample source",
+            },
+            "title": "sample news",
+            "url": "https://localhost",
+            "urlToImage": "http://localhost/image",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

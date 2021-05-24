@@ -2,6 +2,7 @@
  * Created by Anil Jangra on 5/20/2021
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function HeaderWrapper({ children, onReset }) {
   return (
@@ -22,3 +23,8 @@ function HeaderWrapper({ children, onReset }) {
   );
 }
 export default HeaderWrapper;
+
+HeaderWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+  onReset: PropTypes.func.isRequired,
+};

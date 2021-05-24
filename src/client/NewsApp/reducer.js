@@ -3,7 +3,11 @@
  */
 import { FETCHING_NEWS, RESET_DATA, SET_NEWS } from './constants';
 
-function reducer(state, action) {
+const initialState = {
+  articles: [], fetching: false, error: '', hasMore: true,
+};
+
+function reducer(state = initialState, action) {
   switch (action.type) {
     case FETCHING_NEWS:
       return {
@@ -18,6 +22,7 @@ function reducer(state, action) {
       return {
         ...state,
         fetching: false,
+        error: '',
         articles: [...state.articles, ...action.articles],
         hasMore: action.hasMore,
       };

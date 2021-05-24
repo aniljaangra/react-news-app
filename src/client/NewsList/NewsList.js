@@ -11,7 +11,7 @@ function NewsList({
     if (loading && noArticles) {
       return <h6 className="mt-5">Loading…</h6>;
     } if (error) {
-      return <h6 className="mt-5">Failed to load the News.</h6>;
+      return <h6 className="mt-5 alert">Failed to load the News.</h6>;
     }
     return null;
   };

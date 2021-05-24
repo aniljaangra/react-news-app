@@ -6,10 +6,4 @@ import React from 'react';
 import NewsApp from './NewsApp/NewsApp';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return <NewsApp />;
-}
-
-ReactDOM.render(<App />, document.getElementById('root'));
-
-export default App;
+ReactDOM.render(<NewsApp />, document.getElementById('root'));

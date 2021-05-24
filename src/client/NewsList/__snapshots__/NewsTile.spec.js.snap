@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsTile renders NewsTile component correctly 1`] = `
+<div
+  className="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch"
+>
+  <div
+    className="card shadow mb-5 p-2 bg-white rounded"
+  >
+    <Image
+      src="http://localhost/image"
+    />
+    <div
+      className="card-body"
+    >
+      <h5
+        className="card-title"
+      >
+        sample news
+      </h5>
+      <p
+        className="card-text"
+      >
+        sample description
+      </p>
+    </div>
+    <a
+      className="btn btn-primary"
+      href="https://localhost"
+      rel="noreferrer"
+      style={
+        Object {
+          "margin": "5% auto 10% auto",
+          "width": "50%",
+        }
+      }
+      target="_blank"
+    >
+      sample source
+    </a>
+  </div>
+</div>
+`;

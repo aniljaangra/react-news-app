@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function SearchBar({ onSearchNews }) {
   let input;
@@ -26,3 +27,7 @@ function SearchBar({ onSearchNews }) {
 }
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  onSearchNews: PropTypes.func.isRequired,
+};
