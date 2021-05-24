@@ -10,4 +10,4 @@ then start using typing `yarn start`
 
 once complete , open `http://localhost:8080` in browser
 
-for running test cases , simply do `yarn test` (Test cases still pending)
+for running test cases , simply do `yarn test`
